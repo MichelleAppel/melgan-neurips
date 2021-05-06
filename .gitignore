@@ -2,3 +2,9 @@ melganworkspace.code-workspace
 
 models/
 datasets/
+logs/
+
+train_files.txt
+test_files.txt
+
+*.pyc

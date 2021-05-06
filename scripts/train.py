@@ -1,3 +1,6 @@
+import sys
+sys.path.append(r"C:/Users/Michelle/repos/melgan-neurips")
+
 from mel2wav.dataset import AudioDataset
 from mel2wav.modules import Generator, Discriminator, Audio2Mel
 from mel2wav.utils import save_sample
@@ -31,7 +34,7 @@ def parse_args():
     parser.add_argument("--cond_disc", action="store_true")
 
     parser.add_argument("--data_path", default=None, type=Path)
-    parser.add_argument("--batch_size", type=int, default=16)
+    parser.add_argument("--batch_size", type=int, default=4)
     parser.add_argument("--seq_len", type=int, default=8192)
 
     parser.add_argument("--epochs", type=int, default=3000)
@@ -65,8 +68,8 @@ def main():
     ).cuda()
     fft = Audio2Mel(n_mel_channels=args.n_mel_channels).cuda()
 
-    print(netG)
-    print(netD)
+    # print(netG)
+    # print(netD)
 
     #####################
     # Create optimizers #
